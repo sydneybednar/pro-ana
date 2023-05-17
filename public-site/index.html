@@ -1,0 +1,1287 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+    
+        <title>Pro-Ana Communities</title>
+
+        <link rel="stylesheet" type="text/css" href="css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="css/skeleton.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto Mono">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
+
+        <style>
+            html {
+                /* transform: scale(0.8); */
+            }
+            body {
+                font-family: 'Inter', sans-serif;
+                 
+            }
+            #content{
+                margin: 0 auto;
+                max-width: 900px;
+            }
+            p {
+                font-size: 16pt;
+            }
+            h2 {
+                font-size: 20pt;
+                font-weight: bolder;
+            }
+            h1{
+                font-weight: bolder;
+            }
+            #scrolly {
+                position: relative;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                margin-bottom: 2em;
+		    }
+            #scrolly>* {
+                -webkit-box-flex: 1;
+                -ms-flex: 1;
+                flex: 1;
+            }
+
+            article {
+                position: relative;
+                max-width: 60rem;
+            }
+
+            figure {
+                position: -webkit-sticky;
+                position: sticky;
+                width: 65%;
+                margin: 0;
+                -webkit-transform: translate3d(0, 0, 0);
+                -moz-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+                z-index: 0;
+            }
+
+            .step {
+                margin: 0 auto 2rem auto;
+                background-color: #eee;
+                color: rgb(0, 0, 0);
+                padding-bottom: 1em;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .step:last-child {
+                margin-bottom: 0;
+            }
+
+            .step.is-active {
+                color: black;
+            }
+
+            .step.is-active h2{
+                color: #818BF2;
+                font-weight: 800;
+            }
+
+            .step h2 {
+                padding: 2rem;
+                font-size: 2.5rem;
+            }
+            
+            .step p {
+                padding: 0 2rem;
+                font-size: 14pt;
+            }
+
+            * {
+            box-sizing: border-box;
+            }
+            #layout {
+                display: inline-flex;
+                flex-wrap: wrap ;
+                justify-content: center;
+            }
+            .card {
+                width: 400px;
+                padding: 1em;
+                margin: 1em;
+                background-color: white;
+                box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+                border-radius: 5px;
+                font-family: 'Roboto Mono', sans-serif;
+            }
+            #card-details{
+                height: 160px;
+                margin-bottom: 1em;
+            }
+            .collapsible {
+                background-color: #eee;
+                color: #444;
+                cursor: pointer;
+                width: 100%;
+                border: none;
+                text-align: left;
+                outline: none;
+                font-size: 15px;
+                padding: 0 0.5em;
+            }
+            .active, .collapsible:hover {
+                background-color: #ccc;
+            }
+            .content {
+                display: none;
+                overflow: hidden;
+                background-color: #f1f1f1;
+                margin-bottom: 1em;
+                padding: 0.5em;
+            }
+            .collapsible:after {
+                content: '\2304'; 
+                font-size: 30px;
+                color: #444;
+                float: right;
+                margin-left: 5px;
+                line-height: 0.6em;
+            }
+
+            .active:after {
+                content: "\2303"; 
+                line-height: 1.6em;
+            }
+            #card-title{
+                /* height: 70px; */
+                font-size: 22px;
+            }
+            #card-footer {
+                margin-top: 1em;
+            }
+            #card-footer p {
+                margin: 0;
+            }
+            #tooltip{
+                display: inline-block;
+                background-color: white;
+                font-size: 12;
+                max-width: 400;
+                /* max-height: 170; */
+                /* overflow-y: auto; */
+                overflow-wrap: break-word;
+                padding: 1rem;
+                /* border: 1px solid black; */
+                box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+                border-radius: 5px;
+                font-family: 'Roboto Mono', sans-serif;
+            }
+            .point{
+                cursor: pointer;
+            }
+            blockquote {
+                font-size: 1.25em;
+                margin: 1em 0;
+                padding-left: 1em;
+                border-left: 3px solid rgb(55, 53, 47);
+            }
+            .callout {
+                border-radius: 3px;
+                padding: 1rem;
+            }
+            a,
+            a.visited {
+                color: inherit;
+                text-decoration: underline;
+            }
+            #header-article{
+                border-bottom: 1px solid #eee;
+                margin-bottom: 2em;
+                padding-left: 6em;
+                padding-right: 6em;
+                padding-top: 2em;
+                background-color:#eee;
+            }
+
+            .block-color-gray_background {
+                background: #eee;
+                margin: 1.25em 0;
+                page-break-inside: avoid;
+            }
+            #pro-ana-note{
+                margin-left: 1em;
+            }
+            .tw{
+                border: 3px solid red;
+                background-color:rgb(250, 216, 216);
+                padding: 0.5em;
+                font-size: 11pt;
+            }
+            .page-body{
+                margin-bottom: 1em;
+            }
+            .text-section {
+                margin-top: 1em;
+            }
+            #tip {
+                border-top: 2px solid black;
+                border-bottom: 2px solid black;
+                padding: 1em;
+                margin-bottom: 2em;
+                /* background-color: #eee; */
+                /* box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); */
+            }
+            .footer {
+                position: relative;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                background-color: #eee;
+                text-align: center;
+                margin-top: 10em;
+                padding: 1em;
+            }
+            .footer p{
+                margin: 0;
+            }
+
+        </style>
+
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+        <script src="https://unpkg.com/d3-force-cluster@latest"></script>
+        <script src="https://unpkg.com/scrollama"></script>
+        <script src="https://cdn.jsdelivr.net/npm/d3-ease@3"></script>
+    </head>
+<body>
+
+    <div id="header-article">
+        <h1>Are We Even Listening? Why We Should be Taking a Closer Look at Pro-Ana Communities</h1>
+        <h5><i>
+            A topic modeling approach to understanding the experiences of those struggling
+            with an eating disorder
+        </i></h5>
+        <p>By Sydney Bednar</p>
+    </div>
+
+    <div id="content">
+    
+
+    <!-- intro + corpus and methods -->
+    <div class="page-body">
+        <div class="text-section" id="intro">
+            <p id="99bf3a8a-fdb9-4305-932e-66cf67c76ddc" class="tw"><strong>TRIGGER WARNING:</strong> This article will discuss personal experiences with eating disorders.</p>
+            <h2 id="22b68d8c-0b89-451c-97d1-ce5fc1bcce1b" class="">Introduction</h2>
+            <p id="4af505ab-2088-44ba-8ddd-656eecc001b9" class="">More than <a href="https://anad.org/eating-disorders-statistics/">9% of the global population</a> will have an eating
+            disorder at some point over their lifetime. About 26% of this population will attempt suicide, and <a
+                href="https://www.state.sc.us/dmh/anorexia/statistics.htm">only 10%</a> will receive treatment. So where do the
+            other 90% go?</p>
+            <p id="6ef9caf6-7ac1-442a-93c5-f7a6db259fae" class="">When we are affected by untreated diseases, it is common for us to look for support wherever we can. For many of those
+            struggling with eating disorders, this supportive space is on the internet, in eating disorder communities. The concept
+            of medical support communities is not new; in fact, a few are remarkably high-functioning, such as online communities
+            for chronic pain and cancer. In some eating disorder communities, however, there exists a subculture of pro-ana
+            (pro-anorexia) thinking. Users in these spaces comfortably trade harmful dieting tips and medical misinformation.
+            Although most social media platforms have attempted to moderate these spaces, pro-ana websites continue to operate under
+            the radar as message boards, blogs and Q&amp;A threads where users can post about their experiences anonymously. </p>
+            <p id="8cc8480b-b1ae-4db1-bdea-370b959ad9a9" class="">Surprisingly, existing research is divided on whether pro-ana communities are harmful or helpful and, in turn, whether
+            people concerned for those affected by EDs should be intervening or not. Some studies of pro-ana groups have labeled
+            them as <a href="https://www.tandfonline.com/doi/full/10.1080/02673843.2013.856802">empowering spaces</a> for pro-ana
+            “practitioners” who gain a positive sense of selfhood through their pro-ED advocacy. These researchers argue that
+            pro-ana groups are transgressive, as young members resist cultural critiques of their bodies. Some studies also
+            highlight the importance of pro-ana communities for providing <a href="https://www.mdpi.com/2227-9032/10/5/928">social
+                support</a>. Researchers have used these findings to suggest that clinicians intervene in pro-ana sites by actively
+            participating in them. They propose that by accurately answering common medical questions, clinicians could prevent
+            patients from worsening their disorders. Others, however, have described pro-ana sites as spaces which proliferate an
+            incredibly <a href="https://link.springer.com/article/10.1007/s00431-015-2487-7">toxic subculture</a>. They cite pro-ana
+            communities as an “urgent issue,” and they provide guidelines for clinicians, young people, parents, and educators on
+            how to address it. This rigid labeling, however, does not fully capture the complexity of interactions that occur
+            between members of these communities. </p>
+            <p id="f5f95874-7c3e-4b7e-9a9a-3a2f83aaa4dd" class="">Eating disorders can affect anyone, and these communities include
+                the perspectives of people with different genders, ages and cultural backgrounds. So how can we as researchers
+                encompass a group with such diverse experiences? In short, we need to go beyond simplistic labels and try to
+                understand what it is that members of these communities <em>really</em> need. Rather than condemning these groups as
+                harmful or celebrating them as welcoming, we should be asking: how can our understanding of interactions within
+                these groups inform the areas of focus for health care providers, peers, family members and those who are struggling
+                with an eating disorder? </p>
+            <p id="792524bb-7330-46c1-93b2-1630b5244df3" class="">While there has been some ethnographic research and manual content analysis aimed at understanding the experiences of
+            pro-ana community members, results are limited in scale, and it requires a longer time to conduct a comprehensive study.
+            For my research, I have used text mining approaches to carry out a large-scale comparative study on a dataset of
+            <strong>50,591 posts</strong>. </p>
+            </div>
+    
+        <div class="text-section" id="corp">
+            <h2>Corpus and Methods</h2>
+            <p id="6dc0cd04-904c-43cf-bf0b-be326f0f9bea" class="">I gathered data from three distinct pro-ana communities: MyProAna, Eating Disorder Central, and EDAnonymous on Reddit.
+            These are widely seen by outsiders and users as pro-ana due to the substantial amount of pro-ana content that circulates
+            on them. Because I wanted to compare communities of different forms, I selected these three by referring to previous
+            studies, online threads, and outbound links from inactive communities.</p>
+
+            <div class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="f00fce14-3a54-4b41-a9e7-ffe19be16e5e"><div style="font-size:1.5em"><span class="icon">👉</span></div><div id="pro-ana-note" style="width:100%"><em>It is worth noting that there is some disagreement around the definition of “pro-ana” sites. In fact, one study even cited <a href="https://mental.jmir.org/2018/1/e6/">MyProAna as a recovery community</a>. However, for the purpose of this research and based on my own readings of the text, I will be referring to these three communities as pro-ana.</em></div></div>
+            
+            <p id="66151801-8966-4661-ac01-701b73d91c1f" class="">Using Selenium and the Reddit API, I created a web scraper to retrieve the text from each post, as well as associated
+            metadata such as the username, number of likes, and post time. I collected documents spanning from July 2018 to November
+            2022 in order to represent recent topics of discussion. </p>
+            <p id="0b80ae97-7009-46fe-a97e-6bceaad47717" class="">After cleaning the data, I implemented a topic modeling algorithm,
+                which helps to identify the main topics within a corpus of texts. Topic modeling is an unsupervised machine learning
+                method that, by performing iterations of probability assignments, determines how likely it is that
+            <div class="indented">
+                <p id="e4988f4b-06b8-48e3-8487-03dad59192a2" class="">a) a given occurence of a word belongs to each topic and</p>
+                <p id="9c561a04-35f8-4422-9a14-39a5e50bee49" class="">b) a given topic is associated with each document. </p>
+            </div>
+            </p>
+            <p id="47afd5ae-c9de-4151-941d-81869e7519e3" class="">In order to implement the model, I had to determine the optimal number of topics. To find this number, I tested the
+            model on 5, 10, 15, 20, and 30 topics, and I determined that 10 topics produced the most distinct and representative
+            groups. In the end, the output of the model is a list of the most probable words for each topic, sorted in descending
+            order, as well as the proportional weight of each topic associated with each document. Because the model is
+            unsupervised, however, it cannot find meaning in these lists of words that define a topic. For the most comprehensive
+            results, we need to combine computational methods with our own manual analysis. So, for each topic, I read its 20 most
+            representative posts and assigned a label based on my interpretation of the texts. </p>
+            <p id="2d019871-793c-4dc7-bcc8-3cf0d161d72a" class="">Here’s a walk-through of the process.</p>
+        </div>
+    </div>
+
+    <!-- scroller -->
+    <main>
+        <section id="scrolly">
+            <article>
+                <div class="step" data-step="1">
+                    <h2>How does topic modeling work?</h2>
+                    <p>
+                        Let's look at a real post from our dataset as an example...
+                    </p>
+                </div>
+                <div class="step" data-step="2">
+                    <h2>Which topics are associated with this post?</h2>
+                    <p>
+                        Our model tells us that this post is associated with
+                        a few topics, including two topics that both have the word
+                        "weight" as one of their most probable words.
+                    </p>
+                </div>
+                <div class="step" data-step="3">
+                    <h2>Which topics are the most important?</h2>
+                    <p>
+                        And we can get a document-topic matrix, which shows us
+                        the proportional weights of each topic associated with that post.
+                    </p>
+                </div>
+                <div class="step" data-step="4">
+                    <h2>Which documents are the most representative of a given topic?</h2>
+                    <p>
+                        We can also reverse this matrix and see which documents are most highly associated with a given topic.
+                    </p>
+                </div>
+                <div class="step" data-step="5">
+                    <h2>Why should we care?</h2>
+                    <p>
+                        This process helps us label common themes in these communities so that we can
+                        better understand their needs.
+                    </p>
+                </div>
+            </article>
+    
+            <figure>
+                <img src="images/step1.svg" style="width: 700px;"></img>
+            </figure>
+        </section>
+    
+        <section id="outro"></section>
+    </main>
+
+    <!-- topic model analysis -->
+    <div class="page-body", id="analysis">
+        <div id="general" class="text-section">
+            <h2 id="9d16d149-2d78-4b7b-b4f7-9206ecf37da8" class="">What are these communities talking about?</h2>
+            <p>Many <a href="https://doi.org/10.1080/10640266.2010.511918">current studies</a> analyze eating disorder communities
+            under two umbrellas: social support and eating-disorder-specific content. So, based on previous work and my initial
+            readings of threads in eating disorder communities, I assumed that I would find some harmful topics such as dieting tips
+            along with some more hopeful topics such as support, recovery, and empathy. What is most interesting about the results
+            of this model, however, is that half of the topics focus on the experience of having an eating disorder and the
+            challenges that come with it. </p>
+            <p id="aabad59c-249f-4545-a945-f08ead062f6b" class="">Of the ten topics extracted by the model, three surround dieting tips, goal weights, and discussions about calorie
+            counting and restricting. Two are dedicated to messages which show support or express empathy as well as messages which
+            discuss recovery. The other five topics all surround what it is like to live with an eating disorder. </p>
+            <p id="964f6cb6-8fb6-48a4-adfc-bccaa89f5209" class="">I want to reiterate that although what goes into each topic is algorithmically extracted, the <strong>label</strong> is
+            a human judgment. As I mentioned, the labels I landed on are informed by manual examination of the top words and posts
+            for each topic. </p>
+            <p id="54ac5bda-13a0-4948-aac2-5a2dc8d70a38" class="">With eating disorders, it can be difficult to get people who are struggling to speak openly and honestly about their
+            experiences. Specifically, individuals with eating disorders often <a
+                href="https://doi.org/10.1002/erv.857">deliberately conceal their disorders</a>, thus refusing to recognize their
+            own condition. In pro-ana communities, however, it appears that there is a different set of expectations for self
+            presentation. Although we cannot exactly assess the authenticity of this honesty, our evidence suggests that the social
+            norms of these communities differ from in-person interactions. </p>
+            <p id="f5b3efde-35ba-413b-9eea-a4a2826ae529" class="">Many pro-ana communities even have their own principles or rules
+                for members. Eating Disorder Central’s founding principles state that:</p>
+            <blockquote id="2cd27830-1942-4cb6-88ac-cd699ad780b2" class="">“We believe those suffering from eating disorders deserve
+                a space where they can be unapologetically themselves and are able to freely express their ED behaviors free from
+                censorship and suppression.”</blockquote>
+            <p id="a2240103-c437-46f4-bbb8-6e15379b9a96" class="">This emphasis on openness and participation fosters an environment with unique topical trends. Understanding these
+            trends is the first step to uncovering the gaps in current treatment. </p>
+        </div>
+
+        <div id="tip">
+            <h2>TIP: Reading topic cards</h2>
+            <p>Throughout the article, you will see cards corresponding to each topic. Here is what each card will tell you:</p>
+            <img src="images/card-instruct.svg" height="700"></img>
+        </div>
+            
+        <div id="most-common" class="text-section">
+
+            <!-- <div class="row"> -->
+
+                <!-- column for card -->
+                <div id="card-place-common" class="six columns" style="margin-right: 1em;">
+                </div>
+
+                <!-- column for text -->
+                <div class="six columns" style="margin: 0;">
+                    <h2 id="70150788-c3d6-4131-aae2-ccf6c2bbf8be" class="">Which topics are the most common?</h2>
+                    <p id="dfc12ce9-5e12-4c82-83a3-9ff64c1c8af4" class="">Before running the model, as I mentioned earlier, I expected that
+                        the most commonly occurring topics would surround dieting and weight loss or emotional support. From the results of
+                        this model, we find this to be true: two of the most commonly discussed topics across all of the communities are
+                        topic 3 (support/empathy) and topic 10 (goal weights), with topic 10 being equally salient across the three
+                        communities. </p>
+                    <p id="f2d0c023-25eb-485b-b48c-1617f5a88bfe" class="">However, I was surprised to find that two other topics are
+                        discussed frequently as well: topic 5 (living with an ED) and topic 8 (feeling hungry). In posts that are dominated
+                        by these topics, users candidly describe their experiences with an eating disorder, often mentioning feeling
+                        misunderstood. One user highlights the issue of generalizing a complex disease:
+                    <div class="indented">
+                        <blockquote id="4617e974-634c-4ea3-8c2e-ecda01be23b9" class="">“Making sweeping generalizations to cover an entire
+                            anorexia population is never going to be accurate, people have anorexia for many different reasons. For me,
+                            it&#x27;s the opposite, it&#x27;s wanting comfort and safety and not wanting to be in an adult world”
+                        </blockquote>
+                    </div>
+                    </p>
+                    <p id="0875f21d-1b9f-49d5-bccf-86f7f7bf246c" class="">A previous study which analyzed content on pro-ana blogs described
+                        them as <a href="https://www.tandfonline.com/doi/full/10.1080/10640266.2013.827538">platforms for social
+                            support</a>. Topics 5 and 8 from my model align with their finding that “reciprocal self-disclosure” is a
+                        specific form of social support that “may be one of the primary ways in which pro-ana blogs facilitate the sense of
+                        virtual community among their members.” </p>
+                </div>
+            <!-- </div> -->
+
+            <!-- row wrap below card -->
+            <div class="row">
+                <p id="237d2e50-0641-4e3f-b4c2-ce57f967de3a" class="">Overall, it was interesting to find that the majority of topics surround the actual experience of having an eating
+                disorder rather than just dieting tips and tricks, which is the common preconception of what content is like on pro-ana
+                communities. It appears that users feel comfortable sharing the most challenging aspects of anorexia as well as its
+                repercussions. On top of that, users seek to relate to each other but are not afraid to speak up when they disagree with
+                something that was posted.</p>
+            </div>
+        </div>
+
+        <div id="interest", class="text-section">
+            <div class="row">
+                <!-- column for text -->
+                <div class="six columns" style="margin: 0;">
+                    <h2>What's interesting here?</h2>
+                    <p>One topic that I want to highlight is topic 9 (triggers). This topic is not the most popular one across all three
+                    communities, and it is not more present on one community relative to another. While triggers are not an unexpected
+                    topic, I was surprised that triggering conversations often focused on celebrities and media. Many posts describe
+                    specific films, television shows, or famous people who trigger their ED. Interestingly, not all of these posts are
+                    referring to “triggers” in a negative way.</p>
+                    <p id="3f5f8687-a8b4-41b8-ad1b-72761ce01ddc" class="">The reason I want to point out this topic is because I think it is
+                        a good example of the limitations of this model. Although the model grouped these posts together as having the same
+                        dominant topic, the sentiment of each post varies. Some posts condemn celebrities and influencers for being
+                        triggering, like this one:</p>
+                </div>
+
+                <!-- place for card -->
+                <div id="card-place-interest" class="six columns">
+                </div>
+
+
+            </div>
+            <div class="row">
+                <p id="8c873dda-eac5-4b53-8c22-eb9a38f7c9ae" class="">  
+                <div class="indented">
+                    <blockquote id="b07a7acc-71ad-4541-91aa-5ed492f63247" class="">“I find her videos so triggering. And I hate how she
+                        always points out body checks while including them in her videos. Like she is criticizing them but then also
+                        getting views off of them and giving them even more attention. If she really has a problem with body checks then
+                        why not cut them off or even avoid stitching videos with them altogether??”</blockquote>
+                </div>
+                </p>
+                <p id="a21ab67f-dc3d-4baf-a977-45fc7021f880" class="">Meanwhile, other posts describe triggering content as
+                    “therapeutic,” like this one:
+                <div class="indented">
+                    <blockquote id="857aec65-de61-4942-aac9-4d063cc971d1" class="">“did NOT expect the music video for anti hero to be
+                        that ed heavy but i’m kinda glad tbh. it’s therapeutic.”</blockquote>
+                </div>
+                </p>
+                <p id="d00d3ea4-9c83-4202-89d5-21157a38d6c2" class="">Yes, both of these posts are referring to media and triggers, but do they really mean the same thing? I would argue that
+                they don’t. In the first one, the user is describing posting ED content as something harmful and painful. In the second,
+                the user says they are comforted by ED content. Other posts with high salience of this topic also use the word trigger
+                in the context of encouraging or motivating their ED. Because of this inconsistency, topic 9 was difficult to label.
+                </p>
+                <p id="c13581de-438b-4bf8-9d31-372df0650637" class="">Despite the challenge of capturing sentiment, topic modeling is
+                    still a valuable tool for textual analysis. With a large amount of data, topic modeling helps us efficiently
+                    organize, comprehend, and summarize patterns in a corpus. In the case of this corpus, it also provides a foundation
+                    for us to compare content amongst different communities.</p>
+            </div>
+        </div>
+
+        <div id="vary" class="text-section">
+            <!-- row 1: no cards -->
+            <div class="row">
+                <h2 id="904f35d4-dfbc-48ee-8d36-830224d76102" class="">How do topics vary across communities?</h2>
+                <p id="0ed0b07e-29c0-444e-8b78-cea4cc60dd83" class="">I ran permutation tests to determine the statistically significant differences in topic saliency across communities. All
+                of the results, including average saliency and percent difference, that I am going to cite here were statistically
+                significant at the p&lt;0.05 level. I found that topic 5 (living with an ED) is on average more salient in the Reddit
+                community than the other two (14% distribution on Reddit vs 11% for MPA and 9% for EDC). Specifically, this topic is 37%
+                more prevalent on Reddit than it is on EDC. We can infer that the nature of Reddit being a threaded social media affords
+                these types of discussions that involve relating and responding to each other. EDC, however, consists of individual
+                responses to a prompt without as much threading as Reddit. </p>
+
+
+                <div class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex"
+                    id="f00fce14-3a54-4b41-a9e7-ffe19be16e5e">
+                    <div style="font-size:1.5em"><span class="icon">☝</span></div>
+                    <div id="pro-ana-note" style="width:100%"><em>It is interesting how interactions differ between EDC and Reddit because of their different forms. From a human-computer interaction perspective, this made me reflect on how design choices can greatly impact the social behaviors of users on a platform. The user experience of the three communities in my dataset should be considered as a factor when comparing them.</em></div>
+                </div>
+            </div>
+
+
+            <!-- row 2: text on left card on right -->
+            <div class="row">
+                <!-- text columns -->
+                <div class="six columns">
+                    <p id="ee1a8809-0574-45e4-8288-5d5b69a2f08a" class="">Most posts on EDC and MPA take on the form of a journal entry or Q&amp;A. Topic 7 (calorie restriction) fits the Q&amp;A
+                    form, and is most often present on EDC and MPA compared to Reddit (14% distribution on EDC vs 13% on MPA and 7% on
+                    Reddit). Here’s a post where one user poses a question about restriction (I have replaced specific numbers with # signs
+                    to draw attention to the structure of this post rather than to the numbers themselves):<div
+                        class="indented">
+                        <blockquote id="5ada9283-5d63-4a6d-9d10-6e1afdf2d438" class="">“for example: let&#x27;s say your daily intake goal
+                            is ### calories or less and you eat ### but you burn ###. so your net calories for the day would be ###. for me,
+                            i never feel like that&#x27;s good enough. i will still feel bad about the extra ### calories i ate even though
+                            i burned twice as much. does anyone relate?”</blockquote>
+                    </div>
+                    </p>
+                    <p id="e8ac7e6e-2bf4-40ae-b216-08384548d2f4" class="">In the case of topic 7, we must also consider the impact of content moderation.</p>
+                </div>
+
+                <!-- card column -->
+                <div id="card-place-vary1" class="six columns">
+                
+                
+                </div>
+            </div>
+
+            <!-- row 3: below card wrap -->
+            <div class="row">
+                <p id="b73e48a9-3357-449d-b091-9e7c6f13ff50" class="">Because Reddit is a more popular forum, it is also more moderated, and we often see posts replaced by a message from a
+                Reddit bot explaining that the post was removed for harmful content. So it’s not surprising that topic 7, which has the
+                potential to spread harmful nutritional misinformation, is 96% more prevalent on EDC, an unmoderated site, compared to
+                Reddit. </p>
+            </div>
+              
+        </div>
+
+        <div id="vary2" class="text-section">
+            
+            <div class="row">
+                <div id="card-place-vary2" class="six columns">
+                
+                </div>
+                <div class="six columns">
+                    <p id="41144a5e-0cac-4fb8-87dc-3ea0600576b8" class="">One reason why I chose MPA as a community of interest was due to <a href="https://mental.jmir.org/2018/1/e6/">this
+                        article</a>, which describes MyProAna as a recovery community. But after reading numerous threads on the site, I was
+                    not so convinced. While the community guidelines emphasize on support, many of the users on this site still discuss
+                    pro-anorexia topics. </p>
+                    
+                    <p>If this labelling were accurate, I would expect that MPA would discuss topic 4 (recovery) and topic 3 (support)
+                    significantly more often compared to the other two communities. We do find that when comparing MPA and Reddit, topic 4
+                    (recovery) is 37% more salient on MPA. However, compared to EDC, it is only 10% more salient. Recovery is also the least
+                    salient topic across all three communities. Similarly, topic 3 (support) is 22% more salient on MPA compared to EDC, but
+                    it is only 8% more salient compared to Reddit. </p>
+                    <p id="27a3dea4-cb28-4c34-975a-4b2116e209de" class="">From these results, we can see how a simplistic label does not
+                        encapsulate the entire community.</p>
+                </div>
+            
+            
+            </div>
+        </div>
+   
+        <!-- conclusion -->
+        <div id="conclusion" class="text-section" style="border-bottom: 2px solid black; margin-bottom: 2em;">
+            <h2>Where do we go from here?</h2>
+            <p id="daff5a9a-6134-4cd1-bc51-046700d119c3" class="">Eating disorders are incredibly under-treated. They need to be addressed more seriously. In order to do so, we need to
+            put conscious effort into understanding the complicated emotions and behaviors of those who are struggling. While eating
+            disorder treatment has come a long way, it is still de-prioritized and neglected compared to disorders such as substance
+            abuse. My research examined three pro-ana communities, but future work should continue to use computational methods to
+            look at an even larger number of communities in order to prescribe the most effective solution. </p>
+            <p id="7c2a9f35-b1e0-4e71-bcfc-3f4e4ac2da2d" class="">Intervention should go beyond just shutting down these sites or
+                directing people toward ones that are “better” based on subjective opinion. The reality is that for every site that
+                is shut down or moderated, another site will replace it. Instead, we should be
+                <em>listening</em> to what people are saying
+                on these communities that they are <em>not</em> saying to a parent, a therapist, or a friend. And we should ask
+                ourselves why that is.</p>
+            <p id="cefc9df9-f54c-4c6f-b147-793e4b64a778" class="">The fact that people feel more comfortable sharing their
+                experiences honestly and openly with anonymous strangers online than with the people who are closest to them should
+                be enough to tell us that something needs to change. </p>
+        </div>
+
+    </div>
+
+    
+    
+
+    <h2>Explore all 10 topics</h2>
+    <div id="layout">
+        <div id="topic-0" class="container card">
+            <div class="row">
+                <h4 id="card-title">
+                    ....
+                </h4>
+            </div>
+
+            <div class="row" id="card-details">
+                <p>Topic description here</p>
+            </div>
+
+            <!-- collapse: https://www.w3schools.com/howto/howto_js_collapsible.asp -->
+
+            <div class="row" id="collapse">
+                <button type="button" class="collapsible">See Top Words</button>
+                <div class="content">
+                    <p>Top words here...</p>
+                    <svg id="topwords" width="355" height="200" style="border: 1px solid black; background-color:white"></svg>
+                </div>
+            </div>
+
+            <div class="row" id="chart">
+                <svg id="main" width="370" height="300" style="border: 1px solid black"></svg>
+            </div>
+
+            <div class="row" id="card-footer">
+                <p>FOOTER CONTENT HERE</p>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+    <div class="footer">
+        <p>Sydney Bednar</p>
+        <p>Cornell University 2023</p>
+    </div>
+
+    <script>
+
+    // using d3 for convenience
+    var main = d3.select("main");
+    var scrolly = main.select("#scrolly");
+    var figure = scrolly.select("figure");
+    var article = scrolly.select("article");
+    var step = article.selectAll(".step");
+
+    // initialize the scrollama
+    var scroller = scrollama();
+
+    var i = 0
+
+    // generic window resize listener event
+    function handleResize() {
+        // 1. update height of step elements
+        var stepH = Math.floor(window.innerHeight * 0.5);
+        step.style("height", stepH + "px");
+
+        var figureHeight = window.innerHeight / 2.5;
+        var figureMarginTop = (window.innerHeight - figureHeight)/2;
+
+        figure
+            .style("height", figureHeight + "px")
+            .style("top", figureMarginTop + "px");
+
+        // 3. tell scrollama to update new element dimensions
+        scroller.resize();
+    }
+
+    // scrollama event handlers
+    function handleStepEnter(response) {
+        // response = { element, direction, index }
+        console.log(response)
+
+        // add color to current step only
+        step.classed("is-active", function (d, i) {
+            return i === response.index;
+        });
+
+        // update graphic based on step
+        if (! (response.index==0 && response.direction=="down")){
+            console.log("yes")
+            figure.select("img")
+                .transition()
+                .ease(d3.easeExpOut)
+                .duration(100)
+                .style("opacity", 0)
+                .remove()
+
+        }
+        
+
+        figure.append("img")
+
+        figure.select("img").attr("src", `images/step${response.index + 1}.svg`).attr("width", "700px")
+
+        figure.select("img").transition().ease(d3.easeExpIn).duration(100).style("opacity", 1)
+
+    }
+
+    function handleStepExit(response) {
+        // response = { element, direction, index }
+
+        figure.select("img")
+            .transition()
+            .ease(d3.easeExpOut)
+            .duration(100)
+            .style("opacity", 0)
+            .remove()
+    }
+
+    function init() {
+
+        // 1. force a resize on load to ensure proper dimensions are sent to scrollama
+        handleResize();
+
+        // 2. setup the scroller passing options
+        // 		this will also initialize trigger observations
+        // 3. bind scrollama event handlers (this can be chained like below)
+        scroller
+            .setup({
+                step: "#scrolly article .step",
+                offset: 0.5,
+                debug: false
+            })
+            .onStepEnter(handleStepEnter)
+        // .onStepExit(handleStepExit);
+    }
+
+    // kick things off
+    init();
+
+    const requestData = async () => {
+        full = await d3.csv("data/full_data.csv", d3.autoType)
+        topWords = await d3.csv("data/top-words.csv", d3.autoType)
+        
+        console.log(full);
+        console.log(topWords)
+
+        // store cols w topic scores
+        const topCol = new Array
+        full.columns.forEach(d => {
+            if(d.includes("topic")){
+                topCol.push(d)
+            }
+        })
+
+        // store data for scaling radius
+        const radData = {'min': 1,
+                        'max': 0,}
+
+        topCol.forEach((top) => {
+
+            var top0 = full.filter(function (d) {
+
+                return d.dom_top === top;
+
+            })
+
+            // sort by group 
+            let groups = d3.groups(top0, o => o.class)
+
+            let sortedGroups = new Array
+
+            groups.forEach((g) => {
+                sortedGroups.push(g[1].sort(function (a, b) { return -a[top] - -b[top] })
+                    .slice(0, 20))
+            })
+
+            let mergedGr = d3.merge(sortedGroups)
+
+            let min = d3.min(mergedGr, d => d[top])
+            let max = d3.max(mergedGr, d => d[top])
+
+            if (radData['min']> min) radData['min']=min;
+            if (radData['max']< max) radData['max']=max;
+
+        })
+
+        console.log(radData)
+        
+        // dicts for text
+        let titleMap = {"topic-0": "TOPIC 1: DIET FOODS",
+                       "topic-1": "TOPIC 2: SHAME FROM AN ED",
+                       "topic-2": "TOPIC 3: SUPPORT AND EMPATHY",
+                       "topic-3": "TOPIC 4: RECOVERY",
+                       "topic-4": "TOPIC 5: LIVING WITH AN ED",
+                       "topic-5": "TOPIC 6: HATRED OF BODY",
+                       "topic-6": "TOPIC 7: CALORIE RESTRICTION",
+                       "topic-7": "TOPIC 8: FEELING HUNGRY",
+                       "topic-8": "TOPIC 9: TRIGGERS",
+                       "topic-9": "TOPIC 10: GOAL WEIGHTS"
+        }
+
+        let descMap = {
+            "topic-0": "This topic surrounds low-calorie or “safe” foods to eat throughout the day. Posts associated with this topic often contain false nutritional information, which can encourage and worsen an ED.",
+            "topic-1": "This topic focuses on stories of embarrassment or shame from having an ED. Posts associated with this topic express suffering and self-loathing. Many posts are in the form of stories and appear to be confessional.",
+            "topic-2": "This topic consists of encouraging messages, wishing others well and expressing empathy for the situation of another. Encouraging posts associated with this topic point to the support system that a community like this can provide a person who might feel like they are suffering alone.",
+            "topic-3": "This topic discussed the physical repercussions from having an ED as well as from going through recovery. Many posts take on the form of advice, and the tone of voice is very definitive, stating medical “facts” that may or may not be accurate.",
+            "topic-4": "This topic discusses the differing experiences of living with an ED and the possibility of seeking out help. Not all posts here are encouraging recovery, but each post shares a personal opinion on what having an ED means to them.",
+            "topic-5": "This topic surrounds body dysmorphia and insecurity. Some posts exude feelings of self-hatred and criticism while others speak about parts of their body that they track their weight loss with.",
+            "topic-6": "This topic discusses restricting daily calorie counts and exercise habits to burn more calories. Some posts take the form of personal journals while others seek advice. Similar to topic 1, many posts contain unhealthy and dangerous habits.",
+            "topic-7": "This topic discusses the feeling of hunger and the effects of restriction on the body and mind. Some posts express positive emotions and pride for this feeling while others express frustration and lack of control.",
+            "topic-8": "This topic consists of posts surrounding triggers. These posts are often stories about comments made by celebrities, friends, significant others, and adults in the users’ lives.",
+            "topic-9": "This topic discusses goal weights and BMIs. Most posts take on the form of a rant about lack of progress toward weight loss, with many users expressing frustration."
+        }
+
+        let chosenTopic = "topic-0"
+
+        function updateText(chosenTopic){
+            let cont = d3.select(`div#${chosenTopic}`)
+            cont.select("h4#card-title").text(titleMap[chosenTopic])
+            cont.select("div#card-details").select("p")
+                .text(descMap[chosenTopic])
+                .style("font-size", 14)
+            cont.select("div.content").select("p")
+                .text("Here are the top 10 words associated with this topic ordered by probability:")
+                .style("font-size", 14)
+            cont.select("div#card-footer").select("p")
+                .text("*Radius size corresponds to topic saliency for that post")
+                .style("font-size", 14)
+                .style("color", "#808080")
+        }
+
+        d3.select('body').on('click', resetTooltip)
+
+        collide = new Array
+
+        function populateCard(chosenTopic, svg, topW) {
+
+            let width = svg.attr("width")
+            let height = svg.attr("height")
+            const margins = { top: 10, right: 15, bottom: 30, left: 60 }
+            const chartWidth = width - 10 - margins.right;
+            const chartHeight = height - margins.top - 10;
+
+            const topWidth = topW.attr("width")
+            const topHeight = topW.attr("height")
+            const topChartWidth = topWidth - margins.left - margins.right;
+            const topChartHeight = topHeight - margins.top - margins.bottom;
+
+            // see top words collapsible 
+            let cont = d3.select(`div#${chosenTopic}`)
+            let coll = cont.select("button.collapsible");
+            coll.on("click", function () {
+                this.classList.toggle("active");
+                var content = cont.select("div.content")
+                if (content.style("display") === "block") {
+                    content.style("display", "none");
+                    content.select("g#bars").remove()
+                    
+                } else {
+                    content.style("display", "block");
+                    loadBars();
+                }
+
+            });
+
+            function loadBars(){
+                // top words
+                const wordArea = topW.append("g").attr("id", "bars")
+                    .attr("transform", `translate(${margins.left}, ${margins.top})`)
+
+                
+                let selectWords = topWords.filter(function (d) {
+                    let top = parseInt(chosenTopic.slice(-1))
+                    return d.topic == top
+                })
+
+                // Y axis
+                var y = d3.scaleBand()
+                    .range([0, topChartHeight])
+                    .domain(selectWords.map(function (d) { return d.word; }))
+                    .padding(0.2);
+
+                // Add X axis
+                var xExtent = d3.extent(selectWords, d => d['proba'])
+                var x = d3.scaleLinear()
+                    .domain([0, xExtent[1]])
+                    .range([0, topChartWidth]);
+                wordArea.append("g")
+                    .attr("transform", "translate(0," + topChartHeight + ")")
+                    .call(d3.axisBottom(x)
+                        .ticks(4)
+                        .tickSize(0)
+                        .tickFormat(d3.format(".1%")));
+
+                // color scale
+                var barColor = d3.scaleSequential()
+                    .domain(xExtent)
+                    .interpolator(d3.interpolateRgb("lavender", "mediumslateblue"))
+
+                wordArea.selectAll("rects").data(selectWords)
+                    .join("rect")
+                    .attr("y", d => y(d['word']))
+                    .attr("height", y.bandwidth())
+                    .transition() 
+                    .duration(1000)
+                    .attr("width", d => topChartWidth - y(d['word']))
+                    .attr("x", d => x(0))
+                    .attr("fill", d => barColor(d['proba']))
+                
+                wordArea.append("g")
+                    .call(d3.axisLeft(y).tickSize(0))
+                    .selectAll("text")
+                    .style("text-anchor", "end");
+
+                // set font
+                d3.selectAll("text").attr("font-family", "Roboto Mono")
+
+            }
+            
+
+            // update title and desc
+            updateText(chosenTopic)
+
+            var top0 = full.filter(function (d) {
+
+                return d.dom_top === chosenTopic;
+
+            })
+
+            // sort by group 
+            let groups = d3.groups(top0, o => o.class)
+
+            let sortedGroups = new Array
+
+            groups.forEach((g) => {
+                sortedGroups.push(g[1].sort(function (a, b) { return -a[chosenTopic] - -b[chosenTopic] })
+                    .slice(0, 20))
+            })
+
+            let mergedGr = d3.merge(sortedGroups)
+
+            // d3 force cluster from https://gist.github.com/ericsoco/4e1b7b628771ae77753842e6dabfcef3
+
+            var padding = 1.5, // separation between same-color nodes
+                clusterPadding = 10, // separation between different-color nodes
+                maxRadius = 13;
+
+            var n = mergedGr.length, // total number of nodes
+                m = 3; // number of distinct clusters
+
+            var color = d3.scaleOrdinal()
+                .domain(['edc', 'mpa', 'reddit'])
+                .range(["#2C8C69", "#005fd9", "#ff4500"]);
+
+            // The largest node for each cluster.
+            var clusters = new Array(m);
+
+            var nodesTest = new Array
+
+            // new scale for radius
+            var radExtent = [radData['min'], radData['max']]
+            // const radExtent = d3.extent(mergedGr, d => d[chosenTopic])
+            const radScale = d3.scaleSqrt().domain(radExtent).range([5, maxRadius])
+
+            var mapping = { "edc": 1, "mpa": 2, "reddit": 3 }
+
+            function getText(d) {
+                return d.class != "reddit" ? d['post-text'] : d['body']
+            }
+
+            mergedGr.forEach(function (d) {
+                var i = d['class'],
+                    r = radScale(d[chosenTopic]),
+                    d = {
+                        cluster: i,
+                        radius: r,
+                        text: getText(d),
+                        x: Math.cos(mapping[i] / m * 0.7 * Math.PI) * 140 + chartWidth / 2 ,
+                        y: Math.sin(mapping[i] / m * 0.7 * Math.PI) * 140 + chartHeight / 2 
+                    };
+                if (!clusters[i] || (r > clusters[i].radius)) clusters[i] = d;
+                nodesTest.push(d);
+            })
+            
+            var simulation = d3.forceSimulation()
+                // keep entire simulation balanced around screen center
+                .force('center', d3.forceCenter(chartWidth / 2, chartHeight / 2).strength(1))
+                // cluster by section
+                .force('cluster', d3.forceCluster()
+                    .centers(function (d) { return clusters[d.cluster]; })
+                    .strength(1))
+                // apply collision with padding
+                .on('tick', layoutTick)
+                .nodes(nodesTest);
+
+
+            var sim = simulation.force('collide', d3.forceCollide(function (d) { return d.radius + padding; }));
+
+            collide.push({
+                topic : chosenTopic,
+                simStore : sim
+            })
+
+            const chartArea = svg.append("g").attr("id", "force").attr("transform", "translate(0,15)");
+            const legArea = svg.append("g")
+
+            var node = chartArea.selectAll('circle')
+                .data(nodesTest)
+                .enter().append('circle')
+                .attr("class", "point")
+                .style('fill', d => lighten(color(d.cluster), d.radius))
+                .on("mouseover", hoverIn)
+                .on("mouseout", hoverOut)
+                .on("click", mouseClick)
+
+            // legend
+            legArea.append("circle")
+                     .attr("cx", 80)
+                     .attr("cy", 20)
+                     .attr("r", 6)
+                     .style("fill", "#ff4500")
+            legArea.append("circle")
+                     .attr("cx", 170)
+                     .attr("cy", 20)
+                     .attr("r", 6)
+                     .style("fill", "#005fd9")
+            legArea.append("circle")
+                     .attr("cx", 240)
+                     .attr("cy", 20)
+                     .attr("r", 6)
+                     .style("fill", "#2C8C69")
+            legArea.append("text")
+                     .attr("x", 90)
+                     .attr("y", 20)
+                     .text("Reddit")
+                     .style("font-size", "15px")
+                     .attr("alignment-baseline", "middle")
+            legArea.append("text")
+                     .attr("x", 180)
+                     .attr("y", 20)
+                     .text("MPA")
+                     .style("font-size", "15px")
+                     .attr("alignment-baseline", "middle")
+            legArea.append("text")
+                     .attr("x", 250)
+                     .attr("y", 20)
+                     .text("EDC")
+                     .style("font-size", "15px")
+                     .attr("alignment-baseline", "middle")
+
+
+            function layoutTick(e) {
+                node
+                    .attr('cx', function (d) { return d.x = Math.max(d.radius, Math.min(chartWidth-d.radius, d.x)); })
+                    .attr('cy', function (d) { return d.y = Math.max(d.radius, Math.min(chartHeight-d.radius, d.y)); })
+                    .attr('r', function (d) { return d.radius; })
+            }
+                
+                
+
+        }
+            
+        populateCard(chosenTopic, d3.select("svg#main"), d3.select("svg#topwords"));
+        
+        
+
+        topCol.slice(1).forEach(t => {
+
+            // test html function
+            let cont = d3.select("div#layout")
+                .append("div")
+                .attr("id", t)
+                .attr("class", "container card")
+                
+
+            cont.html('<div class="row"><h4 id="card-title">....</h4></div>' +
+                '<div class="row" id="card-details"><p>Topic description here</p></div>' +
+                '<div class="row" id="collapse"><button type = "button" class= "collapsible">See Top Words</button>' +
+                '<div class="content"><p>Top words here...</p><svg id="topwords" width="355" height="200" style="border: 1px solid black; background-color:white"></svg></div></div >' +
+                '<div class="row" id="chart"><svg id = "main" width = "370" height = "300" style = "border: 1px solid black"></svg></div >' +
+                '<div class="row" id="card-footer"><p>FOOTER CONTENT HERE</p></div>')
+            
+            populateCard(t, cont.select("svg#main"), cont.select("svg#topwords"))
+
+        })
+
+        // most common
+
+        let common = ['topic-4', 'topic-7']
+        common.forEach(t => {
+
+            let place = d3.select("div#card-place-common").append("div")
+                .attr("id", t)
+                .attr("class", "container card")
+
+            place.html('<div class="row"><h4 id="card-title">....</h4></div>' +
+                '<div class="row" id="card-details"><p>Topic description here</p></div>' +
+                '<div class="row" id="collapse"><button type = "button" class= "collapsible">See Top Words</button>' +
+                '<div class="content"><p>Top words here...</p><svg id="topwords" width="355" height="200" style="border: 1px solid black; background-color:white"></svg></div></div >' +
+                '<div class="row" id="chart"><svg id = "main" width = "370" height = "300" style = "border: 1px solid black"></svg></div >' +
+                '<div class="row" id="card-footer"><p>FOOTER CONTENT HERE</p></div>')
+
+            populateCard(t, place.select("svg#main"), place.select("svg#topwords"))
+
+        })
+
+        // interest
+
+        let interest = 'topic-8'
+
+        let place = d3.select("div#card-place-interest").append("div")
+            .attr("id", interest)
+            .attr("class", "container card")
+
+        place.html('<div class="row"><h4 id="card-title">....</h4></div>' +
+            '<div class="row" id="card-details"><p>Topic description here</p></div>' +
+            '<div class="row" id="collapse"><button type = "button" class= "collapsible">See Top Words</button>' +
+            '<div class="content"><p>Top words here...</p><svg id="topwords" width="355" height="200" style="border: 1px solid black; background-color:white"></svg></div></div >' +
+            '<div class="row" id="chart"><svg id = "main" width = "370" height = "300" style = "border: 1px solid black"></svg></div >' +
+            '<div class="row" id="card-footer"><p>FOOTER CONTENT HERE</p></div>')
+
+        populateCard(interest, place.select("svg#main"), place.select("svg#topwords"))
+
+        // vary 1 
+        let vary1 = ['topic-6']
+        vary1.forEach(t => {
+
+            let place = d3.select("div#card-place-vary1").append("div")
+                .attr("id", t)
+                .attr("class", "container card")
+
+            place.html('<div class="row"><h4 id="card-title">....</h4></div>' +
+                '<div class="row" id="card-details"><p>Topic description here</p></div>' +
+                '<div class="row" id="collapse"><button type = "button" class= "collapsible">See Top Words</button>' +
+                '<div class="content"><p>Top words here...</p><svg id="topwords" width="355" height="200" style="border: 1px solid black; background-color:white"></svg></div></div >' +
+                '<div class="row" id="chart"><svg id = "main" width = "370" height = "300" style = "border: 1px solid black"></svg></div >' +
+                '<div class="row" id="card-footer"><p>FOOTER CONTENT HERE</p></div>')
+
+            populateCard(t, place.select("svg#main"), place.select("svg#topwords"))
+
+        })
+
+        // vary 2 
+        let vary2 = ['topic-2', 'topic-3']
+        vary2.forEach(t => {
+
+            let place = d3.select("div#card-place-vary2").append("div")
+                .attr("id", t)
+                .attr("class", "container card")
+
+            place.html('<div class="row"><h4 id="card-title">....</h4></div>' +
+                '<div class="row" id="card-details"><p>Topic description here</p></div>' +
+                '<div class="row" id="collapse"><button type = "button" class= "collapsible">See Top Words</button>' +
+                '<div class="content"><p>Top words here...</p><svg id="topwords" width="355" height="200" style="border: 1px solid black; background-color:white"></svg></div></div >' +
+                '<div class="row" id="chart"><svg id = "main" width = "370" height = "300" style = "border: 1px solid black"></svg></div >' +
+                '<div class="row" id="card-footer"><p>FOOTER CONTENT HERE</p></div>')
+
+            populateCard(t, place.select("svg#main"), place.select("svg#topwords"))
+
+        })
+        
+
+        // instantiate the scrollama
+        const scroller2 = scrollama();
+
+        // setup the instance, pass callback functions
+        scroller2
+            .setup({
+                step: ".card"
+            })
+            .onStepEnter((response) => {
+                var id = response.element.id
+
+                collide.forEach((e) => {
+                    if(e['topic']==id){
+                        e['simStore'].alpha(0.9).restart().stop()
+                        for(let i=0; i<20; i++){
+                            {e['simStore'].tick()}
+                        }
+                        e['simStore'].restart()
+                    }
+                })   
+            })
+        
+
+        // based on Jeff's function
+        function lighten(color, radius) {
+    
+
+            let hclColor = d3.hcl(color);
+            let luma = hclColor.l * (1-radius/13) + 55
+            return d3.rgb(d3.hcl(hclColor.h, hclColor.c, luma));
+
+        }
+        
+
+
+        function hoverIn(e,d){
+            d3.select(this).style("stroke", "black").style("stroke-width", 2)
+                
+        }
+
+        function hoverOut(){
+            
+            if(!d3.select(this).classed("active")){
+                d3.select(this).style("stroke", "")
+            }   
+        }
+
+        function mouseClick(e,d){
+
+            d3.select(this).classed("active", true)
+
+            let other = d3.selectAll("circle").filter(function (a) {
+                return a != d
+            })
+
+            other.classed("active", false).style("stroke", "")
+
+            // add tooltip
+            d3.select('body')
+                .append('div')
+                .attr('id', 'tooltip')
+                .attr('style', 'position: absolute; opacity: 0;');
+
+    
+
+
+            d3.select('#tooltip')
+               .style("opacity", 0)
+                .style('left', function(){
+                    if(e.pageX + 400 < 1400){
+                        return (e.pageX + 10) + 'px'
+                    }
+                    else{
+                        return (e.pageX -410) + 'px'
+                    }
+                })
+                .style('top', (e.pageY + 10) + 'px')
+                .text(d.text)
+                .transition()
+                .duration(300)
+                .ease(d3.easeCubicIn)
+                .style('opacity', 1)   
+                
+            
+        }
+
+        function equalToEventTarget() {
+            return this == event.target;
+        }
+
+        function resetTooltip(e) {
+            if(!e.target.classList.contains("active")){
+                // reset tooltip state
+                d3.select("#tooltip").style('opacity', 0).remove()
+                d3.selectAll("circle").style("stroke", "")
+            }
+
+            
+        }
+
+        
+
+
+
+    }
+    requestData();
+    </script>
+</body>
+</html>
