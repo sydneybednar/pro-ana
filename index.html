@@ -192,10 +192,20 @@
             #header-article{
                 border-bottom: 1px solid #eee;
                 margin-bottom: 2em;
+                margin-top: 2em;
                 padding-left: 6em;
                 padding-right: 6em;
-                padding-top: 2em;
-                background-color:#eee;
+                /* background-color:#eee; */
+                box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+            }
+
+            #header-article .header-text{
+                margin: 0 auto;
+                max-width: 900px;
+            }
+
+            #header-article p{
+                font-size: 12pt;
             }
 
             .block-color-gray_background {
@@ -208,9 +218,11 @@
             }
             .tw{
                 border: 3px solid red;
+                border-radius: 5px;
                 background-color:rgb(250, 216, 216);
                 padding: 0.5em;
                 font-size: 11pt;
+                box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
             }
             .page-body{
                 margin-bottom: 1em;
@@ -235,9 +247,14 @@
                 text-align: center;
                 margin-top: 10em;
                 padding: 1em;
+                box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
             }
             .footer p{
                 margin: 0;
+            }
+            .top-sticky{
+                padding-left: 100px;
+                /* position: sticky; */
             }
 
         </style>
@@ -249,13 +266,19 @@
     </head>
 <body>
 
+    <!-- <div id="top-sticky">
+        <h4>Sydney Bednar</h4>
+    </div> -->
+
     <div id="header-article">
-        <h1>Are We Even Listening? Taking a Closer Look at Pro-Anorexia Communities</h1>
-        <h5><i>
-            A topic modeling approach to understanding the experiences of those struggling
-            with an eating disorder
-        </i></h5>
-        <p>By Sydney Bednar</p>
+        <div class="header-text">
+            <h4><strong>Are We Even Listening? Taking a Closer Look at Pro-Anorexia Communities</strong></h4>
+            <h5><i>
+                    A topic modeling approach to understanding the experiences of those struggling
+                    with an eating disorder
+                </i></h5>
+            <p>By Sydney Bednar</p>
+        </div>
     </div>
 
     <div id="content">
