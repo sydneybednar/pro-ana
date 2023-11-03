@@ -7,14 +7,16 @@
         <link rel="stylesheet" type="text/css" href="css/normalize.css">
         <link rel="stylesheet" type="text/css" href="css/skeleton.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto Mono">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
         <style>
             html {
                 /* transform: scale(0.8); */
             }
             body {
-                font-family: 'Inter', sans-serif;
+                font-family: 'Open Sans', sans-serif;
                  
             }
             #content{
@@ -190,16 +192,19 @@
                 text-decoration: underline;
             }
             #header-article{
-                border-bottom: 1px solid #eee;
-                margin-bottom: 2em;
-                margin-top: 2em;
+                border-bottom: 2px solid #eee;
                 padding-left: 6em;
                 padding-right: 6em;
+                width: 70%;
                 /* background-color:#eee; */
-                box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+                /* box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px; */
+                margin: 0 auto;
+                margin-bottom: 2em;
+                margin-top: 0.5em;
             }
 
             #header-article .header-text{
+                padding-top: 2em;
                 margin: 0 auto;
                 max-width: 900px;
             }
@@ -251,11 +256,45 @@
             }
             .footer p{
                 margin: 0;
+                font-family: 'Raleway', sans-serif;
             }
-            .top-sticky{
-                padding-left: 100px;
-                /* position: sticky; */
+            #top-sticky{
+                
+                position: sticky;
+                display: flex;
+                justify-content: space-between;
+                top: 0;
+                width: 100%;
+                z-index: 1;
+                padding-left: 50px;
+                padding-right: 50px;
+                padding-top: 15px;
+                padding-bottom: 1px;
+                background-color: white;
+                box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
             }
+
+            #top-sticky h5{
+                font-weight: light;
+                font-family: 'Raleway', sans-serif;
+            }
+            .fa {
+                margin-right: 0.4em;
+                font-size: 30px;
+                width: 30px;
+                text-align: left;
+                text-decoration: none;
+                border-radius: 50%;
+            }
+
+            .fa:hover{
+                color: #818BF2;
+            }
+
+            .fa-instagram {
+                margin-right: 0.2em;
+            }
+
 
         </style>
 
@@ -266,9 +305,17 @@
     </head>
 <body>
 
-    <!-- <div id="top-sticky">
-        <h4>Sydney Bednar</h4>
-    </div> -->
+    <div id="top-sticky">
+        <div>
+        <h5>Sydney Bednar</h5>
+        </div>
+        <div id="socials">
+            <a title='Personal Website' href="https://sydneybednar.wixsite.com/my-site" class="fa fa-laptop" target="_blank"></a>
+            <a title='Instagram' href="https://www.instagram.com/sydbednar/" class="fa fa-instagram" target="_blank" ></a>
+            <a title='Linkedin' href="https://www.linkedin.com/in/sydney-bednar/" class="fa fa-linkedin" target="_blank"></a>
+            
+        </div>  
+    </div>
 
     <div id="header-article">
         <div class="header-text">
